@@ -23,7 +23,7 @@ public class UserEntity {
     private String password;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
-    private List<ToDoEntity> todos;
+    private List<TodoEntity> todos;
 
     @Override
     public boolean equals(Object o) {

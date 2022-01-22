@@ -14,7 +14,7 @@ import java.util.Objects;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter @Setter
-public class ToDoEntity {
+public class TodoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -30,7 +30,7 @@ public class ToDoEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        ToDoEntity that = (ToDoEntity) o;
+        TodoEntity that = (TodoEntity) o;
         return id != null && Objects.equals(id, that.id);
     }
 
