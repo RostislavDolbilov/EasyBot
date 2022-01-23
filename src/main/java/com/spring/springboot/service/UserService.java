@@ -2,6 +2,7 @@ package com.spring.springboot.service;
 
 import com.spring.springboot.entity.UserEntity;
 import com.spring.springboot.exeption.UserAlreadyExistExeption;
+import com.spring.springboot.exeption.UserNotFoundExeption;
 import com.spring.springboot.model.User;
 import com.spring.springboot.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,10 +25,10 @@ public class UserService {
         userRepo.save(user);
     }
 
-    public User getUserById(Long id) throws UserAlreadyExistExeption {
+    public User getUserById(Long id) throws UserNotFoundExeption {
         UserEntity user = userRepo.findById(id).orElse(null);
         if (user == null){
-            throw new UserAlreadyExistExeption("User with " + id + " - does not exist");
+            throw new UserNotFoundExeption("User with " + id + " - not found");
         }
         return User.toModel(user);
     }

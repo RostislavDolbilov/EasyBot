@@ -36,4 +36,13 @@ public class TodoController {
             return ResponseEntity.badRequest().body("Error");
         }
     }
+
+    @GetMapping("/get_todo")
+    public ResponseEntity getTodo(@RequestParam Long id){
+        try {
+            return ResponseEntity.ok(todoService.getTodoById(id));
+        }catch (Exception e){
+            return ResponseEntity.badRequest().body("Error");
+        }
+    }
 }

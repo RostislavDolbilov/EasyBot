@@ -10,7 +10,7 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "todo")
+@Table(name = "todos")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter @Setter
@@ -22,7 +22,7 @@ public class TodoEntity {
     private Boolean completed;
     private String description;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private UserEntity user;
 
