@@ -18,7 +18,10 @@ http://localhost:8090/todo/create_todo?userId=1
 body:
 {
     "title":"TODO TITLE2",
-    "completed":false
+    "completed":false,
+    "description": "some description"
 }
 
 http://localhost:8090/todo/update_todo?id=2
+
+http://localhost:8090/todo/get_todo?id=6
