@@ -1,5 +1,9 @@
-databaseChangeLog: #параметр в котором находятся миграции
-  - include: # список активных миграций
+databaseChangeLog:
+  - include:
       file: db/changelog/changeset/create-users-table.yaml
   - include:
       file: db/changelog/changeset/create-todos-table.yaml
+  - include:
+      file: db/changelog/changeset/fill-users-table.yaml
+  - include:
+      file: db/changelog/changeset/fill-todos-table.yaml

@@ -1,0 +1,32 @@
+databaseChangeLog:
+  - changeSet:
+      id: 0.0.3
+      author: Rostislav Dolbilov
+      changes:
+        - insert:
+            columns:
+              - column:
+                  name: username
+                  value: Lev
+              - column:
+                  name: password
+                  value: 0000
+            tableName:  users
+        - insert:
+            columns:
+              - column:
+                  name: username
+                  value: Slava
+              - column:
+                  name: password
+                  value: 1111
+            tableName:  users
+        - insert:
+            columns:
+              - column:
+                  name: username
+                  value: Natali
+              - column:
+                  name: password
+                  value: 2222
+            tableName:  users
