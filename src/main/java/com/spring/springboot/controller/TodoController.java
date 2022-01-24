@@ -1,8 +1,6 @@
 package com.spring.springboot.controller;
 
 import com.spring.springboot.entity.TodoEntity;
-import com.spring.springboot.entity.UserEntity;
-import com.spring.springboot.exeption.UserAlreadyExistExeption;
 import com.spring.springboot.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

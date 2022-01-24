@@ -2,11 +2,9 @@ package com.spring.springboot.service;
 
 import com.spring.springboot.entity.TodoEntity;
 import com.spring.springboot.entity.UserEntity;
-import com.spring.springboot.exeption.TodoNotFoundExeption;
-import com.spring.springboot.exeption.UserAlreadyExistExeption;
+import com.spring.springboot.exeption.TodoNotFoundException;
 import com.spring.springboot.model.FullTodo;
 import com.spring.springboot.model.Todo;
-import com.spring.springboot.model.User;
 import com.spring.springboot.repository.TodoRepo;
 import com.spring.springboot.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,10 +34,10 @@ public class TodoService {
         return Todo.toModel(todoRepo.save(todo));
     }
 
-    public FullTodo getTodoById(Long id) throws TodoNotFoundExeption {
+    public FullTodo getTodoById(Long id) throws TodoNotFoundException {
         TodoEntity todo = todoRepo.findById(id).orElse(null);
         if (todo == null){
-            throw new TodoNotFoundExeption("Todo with " + id + " - does not exist");
+            throw new TodoNotFoundException("Todo with " + id + " - does not exist");
         }
         return FullTodo.toModel(todo);
     }

@@ -1,8 +1,8 @@
 package com.spring.springboot.service;
 
 import com.spring.springboot.entity.UserEntity;
-import com.spring.springboot.exeption.UserAlreadyExistExeption;
-import com.spring.springboot.exeption.UserNotFoundExeption;
+import com.spring.springboot.exeption.UserAlreadyExistException;
+import com.spring.springboot.exeption.UserNotFoundException;
 import com.spring.springboot.model.User;
 import com.spring.springboot.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,17 +18,17 @@ public class UserService {
         this.userRepo = userRepo;
     }
 
-    public void registration(UserEntity user) throws UserAlreadyExistExeption {
+    public void registration(UserEntity user) throws UserAlreadyExistException {
         if (userRepo.findByUsername(user.getUsername()) != null){
-            throw new UserAlreadyExistExeption("User already exist");
+            throw new UserAlreadyExistException("User already exist");
         }
         userRepo.save(user);
     }
 
-    public User getUserById(Long id) throws UserNotFoundExeption {
+    public User getUserById(Long id) throws UserNotFoundException {
         UserEntity user = userRepo.findById(id).orElse(null);
         if (user == null){
-            throw new UserNotFoundExeption("User with " + id + " - not found");
+            throw new UserNotFoundException("User with " + id + " - not found");
         }
         return User.toModel(user);
     }
