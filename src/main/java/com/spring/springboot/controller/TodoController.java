@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/todo")
+@RequestMapping("/todos")
 public class TodoController {
     private final TodoService todoService;
 

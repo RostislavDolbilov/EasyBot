@@ -12,7 +12,6 @@ public class FullTodo {
     private String title;
     private Boolean completed;
     private String description;
-    private Long userId;
     private String username;
 
     public static FullTodo toModel(TodoEntity entity) {
@@ -21,7 +20,6 @@ public class FullTodo {
         model.setCompleted(entity.getCompleted());
         model.setTitle(entity.getTitle());
         model.setDescription(entity.getDescription());
-        model.setUserId(entity.getUser().getId());
         model.setUsername(entity.getUser().getUsername());
         return model;
     }
