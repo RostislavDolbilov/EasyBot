@@ -4,12 +4,14 @@ import com.spring.springboot.entity.UserEntity;
 import com.spring.springboot.exeption.UserAlreadyExistException;
 import com.spring.springboot.exeption.UserNotFoundException;
 import com.spring.springboot.service.UserService;
+import io.swagger.v3.oas.annotations.Hidden;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/users")
+@Hidden
 public class UserController {
     private final UserService userService;
 

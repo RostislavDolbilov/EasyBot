@@ -2,12 +2,14 @@ package com.spring.springboot.controller;
 
 import com.spring.springboot.entity.TodoEntity;
 import com.spring.springboot.service.TodoService;
+import io.swagger.v3.oas.annotations.Hidden;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/todos")
+@Hidden
 public class TodoController {
     private final TodoService todoService;
 
