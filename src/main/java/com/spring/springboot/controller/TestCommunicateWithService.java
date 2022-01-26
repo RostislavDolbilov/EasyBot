@@ -23,7 +23,7 @@ public class TestCommunicateWithService {
             summary = "getTodo method",
             description = "Getting todo info by ID, from another controller(service or project)"
     )
-    public ResponseEntity getTodo(@RequestParam("ID") @Parameter(description = "ID of todo") Long id){
+    public ResponseEntity getTodo(@RequestParam("ID") @Parameter(description = "please write ID") Long id){
         RestTemplate restTemplate = new RestTemplate();
 
         try {
