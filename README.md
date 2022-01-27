@@ -1,7 +1,7 @@
 # SpringBootRestFullApp
 miniRESTfull
 
-requests from Postman:
+Requests from Postman:
 
 http://localhost:8090/users/registration
 body: 
@@ -25,3 +25,5 @@ body:
 http://localhost:8090/todo/update_todo?id=2
 
 http://localhost:8090/todo/get_todo?id=6
+
+SWAGGER:  http://localhost:8090/swagger-ui.html
