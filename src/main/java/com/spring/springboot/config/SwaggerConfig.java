@@ -13,7 +13,7 @@ public class SwaggerConfig {
         return new OpenAPI()
             .info(
                 new Info()
-                    .title("Mini Rest API application")
+                    .title("Test EasyBot application")
                     .version("1.0.0")
                     .contact(
                         new Contact()
