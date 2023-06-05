@@ -1,4 +1,4 @@
-package com.spring.springboot.dal.converter;
+package com.spring.springboot.model.converter;
 
 import com.spring.springboot.dal.ProductDto;
 import com.spring.springboot.model.Product;
@@ -11,11 +11,10 @@ public class ProductDtoToProductConverter implements Converter<ProductDto, Produ
     public Product convert(ProductDto productDto) {
         return Product.builder()
                 .seriesNumber(productDto.getSeriesNumber())
-                .identifier(productDto.getIdentifier())
-                .productType(productDto.getProductType())
+                .identifier(productDto.getId())
+                .productType(productDto.getProductType().name())
                 .manufacturer(productDto.getManufacturer())
                 .quantity(productDto.getQuantity())
-                .additionSettings(productDto.getAdditionSettings())
                 .build();
     }
 }

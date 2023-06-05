@@ -1,5 +1,6 @@
 package com.spring.springboot.controller;
 
+import com.spring.springboot.dal.ProductDto;
 import com.spring.springboot.model.Product;
 import com.spring.springboot.service.ProductService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -24,28 +25,30 @@ public class ProductsController {
     @PostMapping("/add_product")
     @Operation( summary = "Save product",
                 description = "Creation the new product")
-    public Product saveProduct(@RequestBody @Parameter(description = "Product body") Product product){
+    public ProductDto saveProduct(@RequestBody @Parameter(description = "Product body") ProductDto product){
         return productsService.saveProduct(product);
     }
 
     @PutMapping("/update_product")
     @Operation( summary = "Update product",
                 description = "Updating the product")
-    public Product updateProduct(@RequestBody @Parameter(description = "Product body") Product product) {
+    public ProductDto updateProduct(@RequestBody @Parameter(description = "Product body with id fields") ProductDto product) {
         return productsService.updateProduct(product);
     }
 
     @GetMapping("/get_product")
     @Operation( summary = "Getting product by identifier",
                 description = "Getting product by identifier")
-    public Product findProductById(@RequestParam @Parameter(description = "Product identifier") Long identifier){
+    public Product findProductById(@RequestParam @Parameter(description = "Product id") Long identifier){
         return productsService.getProductByIdentifier(identifier);
     }
 
-    @GetMapping("/get_all_products")
-    @Operation( summary = "Find all products",
-            description = "Getting all products")
-    public List<Product> findAllProducts(){
-        return productsService.getAllProducts();
+    @GetMapping("/get_all/product_type")
+    @Operation( summary = "Find all products by product type",
+            description = "Getting all products by product type")
+    public List<Product> findAllProducts(@RequestParam
+                                             @Parameter(description = "Product type. LAPTOP, PERSONAL_PC, MONITOR or HARD_DISK")
+                                                     String productType){
+        return productsService.getAllProductsByProductType(productType);
     }
 }
