@@ -35,18 +35,18 @@ Save product body example:
             }
         }
 
-Update product body example:
-
+Update product body example:  
+id - id of product and settings which  you want to update  
 
         {
-            "id": 3,
+            "id": 1,
             "productType": "LAPTOP",
             "seriesNumber": "AU57HZ",
             "manufacturer": "Acer",
             "quantity": 0,
             "settings": {
-                "id": 3,
-                "diagonal": "16 inch",
+                "id": 1,
+                "diagonal": "13 inch",
                 "formFactor": null,
                 "memoryCapacity": null
             }
